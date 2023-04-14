@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Raiyan's notepad</title>
+</head>
+<body>
+    <div class="main">
+        <h1>RAIYAN'S NOTEPAD</h1>
+    </div>
+    <div class="mytext">
+        <textarea name="mytext" id="MyText" placeholder="Type your text" cols="100" rows="25"></textarea>       
+    </div>
+    <div class="savetext">
+        <input type="text" id="filename" placeholder="Enter file number">
+    </div>
+    <div class="download">
+        <button id="download">Download</button>
+    </div>
+
+    <Script type="text/javascript">
+        function downloadFile(filename,content){ 
+        const element = document.createElement('a');
+        const blob = new Blob([content],{
+            type: 'plain/text'
+        });
+        const fileurl = URL.createObjectURL(blob);
+        element.setAttribute('href',fileurl);
+        element.setAttribute('download',filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    };
+
+    window.onload =() =>{
+        document.getElementById('download').addEventListener('click',e =>{
+            const filename = document.getElementById('filename').value;
+            const content = document.getElementById('MyText').value;
+
+            if(filename && content){
+                downloadFile(filename, content);
+            }
+        });
+    }
+    </Script>
+</body>
+</html>

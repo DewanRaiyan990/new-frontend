@@ -1,0 +1,39 @@
+.main {
+    font-size: 20px;
+    color: aliceblue;
+    background-color: #19334d;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.mytext{
+    padding-top: 80px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+#MyText{
+    font-size: 20px;
+    resize: none;
+}
+.savetext{
+    padding-top: 30px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.download{
+    padding-top: 20px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+#download{
+    color: aliceblue;
+    background-color: #0E86D4;
+    height: 30px;
+}
